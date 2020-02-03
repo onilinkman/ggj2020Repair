@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/muro1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.8177, 3.2805 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 13.2867, 13.6363 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -127.03, -145.084 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 127.784, 221.824 )
+scale = Vector2( 10, 10 )
+shape = SubResource( 1 )
