@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=1]
+
+[node name="CanvasLayer" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = -340.0
+margin_top = 200.0
+margin_bottom = 300.0
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+size_flags_stretch_ratio = 68.44
+custom_constants/line_spacing = 21
+wrap_enabled = true
