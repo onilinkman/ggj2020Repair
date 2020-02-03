@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/botonClick.wav-27d883dd3c169ec487d498291ee05e5d.sample"
+
+[deps]
+
+source_file="res://musica/botonClick.wav"
+dest_files=[ "res://.import/botonClick.wav-27d883dd3c169ec487d498291ee05e5d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
