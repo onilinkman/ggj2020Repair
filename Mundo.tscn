@@ -1,0 +1,228 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Mundo.gd" type="Script" id=1]
+[ext_resource path="res://Mundo2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/vacio.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/muro2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/piso1.png" type="Texture" id=5]
+[ext_resource path="res://pisoPuas.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Boton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://muro1setTree.tres" type="TileSet" id=8]
+[ext_resource path="res://cartel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/muroSuperior1.png" type="Texture" id=10]
+[ext_resource path="res://Interruptor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sprites/pelota.png" type="Texture" id=12]
+[ext_resource path="res://player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sprites/muroSuperior3.png" type="Texture" id=14]
+[ext_resource path="res://fuego.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sprites/muroSuperior2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/muro3.png" type="Texture" id=17]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "vacio.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 96, 0, 96, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "muro2.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 165, -1, 93, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "piso1.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 122.401, 30.1684, 122.876, -214.677, 42.8763, -214.677, 42.8763, -49.8193, -124.492, -49.8193, -124.492, 32.0843 )
+
+[sub_resource type="PhysicsMaterial" id=6]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 55.8977
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 36.6165, 131.656 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 56.9791, 168.587 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 137.231, 255.101 )
+
+[node name="Node2D" type="Node2D" groups=[
+"persistente",
+]]
+pause_mode = 2
+script = ExtResource( 1 )
+escen = ExtResource( 2 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 256, 256 )
+format = 1
+tile_data = PoolIntArray( -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 256, 256 )
+format = 1
+tile_data = PoolIntArray( -65527, 0, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 0, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0 )
+
+[node name="pisoPuas" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1672.87, 878.53 )
+
+[node name="pisoPuas1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1672.12, 129.672 )
+
+[node name="pisoPuas2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1671.79, 385.314 )
+
+[node name="pisoPuas3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1672.35, 641.175 )
+
+[node name="Node2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 892.991, 78.0141 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 883.541, 704.34 )
+
+[node name="TileMap" type="TileMap" parent="."]
+pause_mode = 2
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 256, 256 )
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 9, 0, 0, 10, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131081, 0, 0, 131082, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0 )
+
+[node name="Cartel" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 20.9295, 37.671 )
+
+[node name="muroSuperior1" type="Sprite" parent="TileMap"]
+editor/display_folded = true
+position = Vector2( 640.702, -37.7952 )
+scale = Vector2( 1, 1.00246 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -90 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap/muroSuperior1"]
+occluder = SubResource( 5 )
+
+[node name="Node2D3" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 510.551, 55.1741 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="TileMap"]
+editor/display_folded = true
+position = Vector2( 1218.03, 183.689 )
+physics_material_override = SubResource( 6 )
+gravity_scale = 0.0
+can_sleep = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/RigidBody2D"]
+editor/display_folded = true
+position = Vector2( 2.45544, 161.842 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="TileMap/RigidBody2D/CollisionShape2D"]
+position = Vector2( -2.45544, -161.842 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, 90 )
+
+[node name="player" parent="TileMap" instance=ExtResource( 13 )]
+pause_mode = 1
+position = Vector2( -197.546, 199.779 )
+collision/safe_margin = 3.281
+
+[node name="muroSuperior3" type="Sprite" parent="TileMap"]
+editor/display_folded = true
+position = Vector2( 640.063, 638.773 )
+texture = ExtResource( 14 )
+
+[node name="muro2" type="Sprite" parent="TileMap/muroSuperior3"]
+position = Vector2( -0.339966, 89.3542 )
+texture = ExtResource( 4 )
+
+[node name="fuego" parent="." instance=ExtResource( 15 )]
+position = Vector2( 922.963, -229.867 )
+
+[node name="muroSuperior2" type="Sprite" parent="."]
+position = Vector2( 806.675, 732.682 )
+texture = ExtResource( 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 734.082, 108.644 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 712.154, 859.567 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 9 )
+
+[node name="muro3" type="Sprite" parent="."]
+position = Vector2( 384.952, -127.337 )
+scale = Vector2( 1.00966, 1.00181 )
+texture = ExtResource( 17 )
+
+[node name="muro4" type="Sprite" parent="."]
+position = Vector2( 128.029, -127.551 )
+texture = ExtResource( 17 )
+
+[node name="muro5" type="Sprite" parent="."]
+position = Vector2( -126.767, -127.379 )
+texture = ExtResource( 17 )
+
+[node name="pasarEscena" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pasarEscena"]
+position = Vector2( 2826.82, 512.349 )
+shape = SubResource( 10 )
+[connection signal="body_entered" from="pasarEscena" to="." method="_on_pasarEscena_body_entered"]
