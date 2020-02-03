@@ -1,0 +1,103 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/caminarFrente1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/caminarFrente2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/amanda.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/amandafrente2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/caminaIzquierda1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/paradaIzquierda1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/caminaIzquierda2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/paradaIzquierda2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/paradaDerecha1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/paradaDerecha2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/caminarDerecha1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/caminarDerecha2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/caminarEspalda.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/caminarEspalda1.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/caminarEspalda2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/blee.png" type="Texture" id=17]
+[ext_resource path="res://CuadroTexto.tscn" type="PackedScene" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "caminataFrente",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "paradaFrente",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "caminarIzquierda",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "paradaDerecha",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "caminaDerecha",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "paradaIzquierda",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Espalda",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "caminarEspalda",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "bleee",
+"speed": 5.0
+} ]
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -336.476, 204.15, -333.612, 390.306, 332.255, 393.17, 332.255, 207.014 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.8613
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -31.0784, 5.61776, -27.9485, -0.435844, -23.7877, -5.42886, -17.6851, -9.31232, -9.91818, -12.3636, 7.00259, -12.3636, 13.6599, -10.4219, 22.259, -4.3193, 27.252, 2.33805, 28.3616, 5.66673, 20.5947, -2.10018, 12.8278, -7.92537, 1.1774, -10.1445, -11.5825, -8.48015, -19.6268, -4.87408, -26.0068, 1.22849 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.36322, 1.21706 )
+frames = SubResource( 1 )
+animation = "paradaFrente"
+playing = true
+offset = Vector2( 0, 80 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.3, 1.3 )
+
+[node name="cuadroText" parent="Camera2D" instance=ExtResource( 18 )]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Camera2D/cuadroText"]
+occluder = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.68323, 199.667 )
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
