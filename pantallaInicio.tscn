@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://pantallaInicio.gd" type="Script" id=1]
+[ext_resource path="res://Mundo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/vacio.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Instucciones.png" type="Texture" id=4]
+
+[sub_resource type="TileSet" id=1]
+0/name = "vacio.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Instucciones.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+escena = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 256, 256 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 1, 0, 65540, 0, 0, 65541, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.13
+anchor_right = 0.13
+margin_left = 343.98
+margin_top = 30.4545
+margin_right = 459.98
+margin_bottom = 44.4546
+rect_scale = Vector2( 3.27461, 10.9832 )
+text = "PRESS FOR REPAIR"
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 0.71
+anchor_bottom = 1.0
+margin_left = 376.502
+margin_top = 217.245
+margin_right = 682.742
+margin_bottom = 325.295
+text = "La planta de energia esta fallando, y tu objetivo es presionar cada boton de las salas para activar el subministro alterno de energia. La planta es un lugar muuy raro asi que ten cuidado, que aveces afecta incluso nuestra realidad"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 382.701
+margin_top = 368.156
+margin_right = 682.701
+margin_bottom = 448.156
+text = "INICIAR"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
